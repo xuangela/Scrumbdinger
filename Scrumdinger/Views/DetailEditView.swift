@@ -1,16 +1,13 @@
-//
-//  DetailEditView.swift
-//  Scrumdinger
-//
-//  Created by Angela Xu on 1/10/24.
-//
+/*
+ See LICENSE folder for this sample’s licensing information.
+ */
 
 import SwiftUI
 
 struct DetailEditView: View {
     @Binding var scrum: DailyScrum
     @State private var newAttendeeName = ""
-    
+
     var body: some View {
         Form {
             Section(header: Text("Meeting Info")) {
@@ -26,13 +23,12 @@ struct DetailEditView: View {
                 }
                 ThemePicker(selection: $scrum.theme)
             }
-            
             Section(header: Text("Attendees")) {
                 ForEach(scrum.attendees) { attendee in
                     Text(attendee.name)
                 }
                 .onDelete { indices in
-                    scrum.attendees.remove(atOffsets:  indices)
+                    scrum.attendees.remove(atOffsets: indices)
                 }
                 HStack {
                     TextField("New Attendee", text: $newAttendeeName)
@@ -53,6 +49,8 @@ struct DetailEditView: View {
     }
 }
 
-#Preview {
-    DetailEditView(scrum: .constant(DailyScrum.sampleData[0]))
+struct DetailEditView_Previews: PreviewProvider {
+    static var previews: some View {
+        DetailEditView(scrum: .constant(DailyScrum.sampleData[0]))
+    }
 }

@@ -1,9 +1,6 @@
-//
-//  ThemeView.swift
-//  Scrumdinger
-//
-//  Created by Angela Xu on 1/10/24.
-//
+/*
+ See LICENSE folder for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -15,11 +12,13 @@ struct ThemeView: View {
             .padding(4)
             .frame(maxWidth: .infinity)
             .background(theme.mainColor)
-            .foregroundStyle(theme.accentColor)
+            .foregroundColor(theme.accentColor)
             .clipShape(RoundedRectangle(cornerRadius: 4))
     }
 }
 
-#Preview {
-    ThemeView(theme: .bubblegum)
+struct ThemeView_Previews: PreviewProvider {
+    static var previews: some View {
+        ThemeView(theme: .buttercup)
+    }
 }

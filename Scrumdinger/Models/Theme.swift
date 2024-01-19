@@ -1,9 +1,6 @@
-//
-//  Theme.swift
-//  Scrumdinger
-//
-//  Created by Angela Xu on 1/9/24.
-//
+/*
+ See LICENSE folder for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -27,24 +24,17 @@ enum Theme: String, CaseIterable, Identifiable {
     
     var accentColor: Color {
         switch self {
-        case .indigo, .magenta, .navy, .oxblood, .purple:
-            return .white
-        default:
-            return .black
+        case .bubblegum, .buttercup, .lavender, .orange, .periwinkle, .poppy, .seafoam, .sky, .tan, .teal, .yellow: return .black
+        case .indigo, .magenta, .navy, .oxblood, .purple: return .white
         }
     }
-    
     var mainColor: Color {
         Color(rawValue)
     }
-    
     var name: String {
         rawValue.capitalized
     }
-    
     var id: String {
         name
     }
 }
-
-

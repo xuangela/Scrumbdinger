@@ -1,9 +1,6 @@
-//
-//  DailyScrum.swift
-//  Scrumdinger
-//
-//  Created by Angela Xu on 1/10/24.
-//
+/*
+ See LICENSE folder for this sample’s licensing information.
+ */
 
 import Foundation
 
@@ -12,7 +9,6 @@ struct DailyScrum: Identifiable {
     var title: String
     var attendees: [Attendee]
     var lengthInMinutes: Int
-    var theme: Theme
     var lengthInMinutesAsDouble: Double {
         get {
             Double(lengthInMinutes)
@@ -21,6 +17,7 @@ struct DailyScrum: Identifiable {
             lengthInMinutes = Int(newValue)
         }
     }
+    var theme: Theme
     
     init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, theme: Theme) {
         self.id = id
