@@ -17,7 +17,7 @@ class ScrumStore: ObservableObject {
                                     in: .userDomainMask,
                                     appropriateFor: nil,
                                     create: false)
-        .appendingPathExtension("scrums.data")
+        .appendingPathComponent("scrums.data")
     }
     
     func load() async throws {

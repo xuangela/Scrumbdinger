@@ -27,8 +27,9 @@ struct CardView: View {
     }
 }
 
+
 struct CardView_Previews: PreviewProvider {
-    static var scrum = DailyScrum.sampleData[0]
+    static private var scrum = DailyScrum.sampleData[0]
     static var previews: some View {
         CardView(scrum: scrum)
             .background(scrum.theme.mainColor)
